@@ -1,0 +1,994 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: lato;
+}
+nav{
+    background: var(--white-color, #FFF);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+height: 60px;
+}
+.edureifylogo{
+    width: 150px;
+    margin-left: 52px;
+    margin-right: 75px;
+}
+.navbarcontent{
+    color: #000 !important;
+    font-family: Lato;
+    font-size: 15px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 22px;
+    margin-left: 25px;
+}
+.loginbuttons{
+    color: rgb(0, 0, 0) !important;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 90px;
+height: 40px;
+flex-shrink: 0;
+    border-radius: 40px;
+background: var(--primary-color, white);
+border: 1px solid white;
+margin-right: 12px;
+
+}
+.registerbuttons{
+    color: white !important;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 114px;
+height: 42px;
+flex-shrink: 0;
+    border-radius: 40px;
+background: var(--primary-color, #0F4987);
+border: 1px solid #0F4987;
+margin-right: 12px;
+}
+/* <------------------------------------Navbar----------------------------------> */
+
+
+/* <----------------------------------form_and_background_section------------------> */
+.backgroundimg{
+    background-image: url(Backgroundimg.jpg);
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 2em;
+
+}
+.Section{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    width: 100%;
+}
+.leftSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5.5rem;
+    width: 50%;
+}
+.RightSection{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.summerinternshipheading{
+    color: var(--white-color, #FFF);
+font-family: Lato;
+font-size: 55px;
+font-style: normal;
+font-weight: 600;
+line-height: 80px; /* 125% */
+}
+.uppertext{
+width: 58%;
+}
+.summersubheading{
+    color: var(--white-color, #FFF);
+font-family: Lato;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: 45px; /* 140.625% */
+}
+.lowertext{
+    width: 58%;
+}
+.formSection{
+    background: #FFF;
+    padding: 25px;
+    margin-top: 8vh;
+    width: 420px;
+    height: 550px;
+}
+.Applynowbutton{
+    border-radius: 50px !important;
+background: #004887 !important;
+width: 100%;
+margin-top: 12px;
+}
+.forminputheading{
+    color: #000;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+ 
+}
+@media (max-width:650px) {
+    .Section{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .RightSection{
+        width: 98%;
+    }
+    .leftSection{
+        width: 120%;
+        margin-top: 0px;
+    }
+}
+@media (max-width:900px) {
+    .formSection{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-width:700px) {
+    .summerinternshipheading{
+    font-size: 44px;
+    line-height: 50px; /* 125% */
+    }
+    .summersubheading{
+    font-size: 28px;
+    line-height: 35px; /* 140.625% */
+    }
+}
+.domainpart{
+    background-color: white !important;
+    color: #7A7A7A !important;
+font-family: Lato;
+font-size: 16px !important;
+}
+.summerintershipdomain{
+    display: flex;
+    align-items: center !important;
+    width: 1200px;
+    height: 165px;
+flex-shrink: 0;
+border-radius: 20px;
+background: #FFF;
+backdrop-filter: blur(2px);
+border: 2px solid black;
+}
+/* <-----------------------------------------Card_section--------------------------------------------> */
+.cardSection{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+
+}
+.cardbody{
+    text-align: center;
+}
+.cardtext{
+    color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+/* <------------------------------------Carsection--over-------------------------> */
+@media (max-width:1200px) {
+    .cardSection{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+    
+    }
+    .cardtext{
+    font-size: 16px;
+    }
+}
+@media (max-width:1000px) {
+    .cardSection{
+        grid-template-columns: auto auto auto auto;
+        gap: 10px;
+    }
+    .cardtext{
+        font-size: 14px;
+        }
+}
+@media (max-width:900px) {
+    .cardSection{
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+    }
+    .cardtext{
+        font-size: 14px;
+        }
+}
+@media (max-width:700px) {
+    .cardSection{
+        grid-template-columns: auto auto;
+        gap: 8px;
+    }
+    .cardtext{
+        font-size: 14px;
+        }
+}
+@media (max-width:415px) {
+    .cardSection{
+        grid-template-columns: auto;
+        gap: 3px;
+    }
+    .cardtext{
+        font-size: 14px;
+        }
+}
+.howinterwork{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.howinterworkheading p{
+    margin-top: 50px;
+    margin-bottom: 35px;
+    color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.boxsteps{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.boxsteps1{
+    border-radius: 10px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #F7F7F7;
+stroke-width: 1px;
+stroke: #E9E9E9;
+width: 80%;
+height: auto;
+flex-shrink: 0;
+}
+.divboxtext p{
+    margin-left: 40px;
+    color: #000;
+font-family: Lato;
+font-size: 23px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+} 
+.divboxpoints li{
+    margin-left: 37px;
+    color: #000;
+font-family: Lato;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+}
+.Bluerectanglebox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+height: 130px;
+flex-shrink: 0;
+background: linear-gradient(90deg, #004887 0%, #3471B7 53.85%, #71A0F0 100%);
+/* background-color:#004887; */
+}
+.secondboxdiv{
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.whochooseusmain{
+    padding: 75px;
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #0F4987;
+    width: 100%;
+height: auto;
+flex-shrink: 0;
+}
+.whochooseutext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.whochooseutext1 p{
+    color: #FFF;
+font-family: Lato;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.whochooseutext2 p{
+    color: #FFF;
+font-family: Lato;
+font-size: 29px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 50px;
+}
+/* <--------------------------Certificate-section----------------------------> */
+.certificateandtext{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.Certificatespoints{
+    color: #FFF;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+}
+.certificateimg{
+    /* width: 598px;
+height: 426px; */
+width: 50%;
+height: auto;
+flex-shrink: 0;
+}
+.imageofcertificate{
+    margin-top: 40px;
+    /* width: 545px;
+    height: 339px; */
+    width: 80%;
+}
+@media (max-width:980px) {
+    .Certificatespoints{
+        color: #FFF;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    }
+    .imageofcertificate{
+        margin-top: 10px;
+        /* width: 545px;
+        height: 339px; */
+        width: 80%;
+    }
+}
+.domainofcounter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.maincounter{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.counterofnumber{
+    border-radius: 10px;
+border: 1px solid #D5D5D5;
+width: 250px;
+height: 175px;
+flex-shrink: 0;
+}
+.countoftext{
+    color: #000;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.counterofnumber{
+    width: 25%;
+    margin: 20px;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width:900px) {
+    .countoftext{
+    font-size: 15px;
+    }
+}
+@media (max-width:755px) {
+    .counterofnumber{
+        width: 22%;
+        margin: 18px;
+        margin-top: 4rem;
+    }
+}
+.coreDomain p{
+    color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding: 9px;
+/* margin-left: 23px; */
+width: 100%;
+
+}
+.employabilityskills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(143deg, #12C2E9 0%, #C471ED 50.28%, #F64F59 100%);
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    
+}
+.employablefirsttext p{
+    color: #FFF;
+font-family: Lato;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.Developrefine p{
+    color: #FFF;
+text-align: center;
+font-family: Lato;
+font-size: 38px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.subtextofdeveloprefine p{
+    color: #FFF;
+text-align: center;
+font-family: Lato;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 145.455% */
+
+}
+.Imageandpoints{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.pointsofwhochooseus{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.sideimagesofpoints{
+    width: 50%;
+}
+.tickcontent{
+    color: #FFF;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.tick{
+   margin: 8px;
+   
+}
+.tick img{
+    margin-right: 10px;
+}
+/* <---------------------------------------Experence-card-------------------------> */
+.divcontainexperence{
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    background: #F7F7F7;
+    
+}
+.ExperenceCardAll{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.experenceheading p{
+    color: #000;
+font-family: Lato;
+font-size: 35px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-top: 34px;
+}
+.edureifyexperencecard{
+    border-radius: 100%; 
+    width: 40px; 
+    border: 1px solid rgb(219, 212, 212); 
+    height: 40px;
+}
+.mainexperenececard{
+    width: 25%;
+    height: auto;
+}
+.secondexperencecard{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.instituteimages{
+    width: 84%;
+}
+.viewmorebutton{
+    margin-top: 23px;
+    border-radius: 50px;
+border: 1px solid #0F4987;
+color: #0F4987;
+font-family: Lato;
+font-size: 16px;
+width: 145px;
+height: 44px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.imagesofwhychooseus{
+    border-radius: 15px;
+    width: 100%;
+}
+@media (max-width:650px) {
+    .ExperenceCardAll{
+        flex-direction: column;
+    }
+    .mainexperenececard{
+        width: 80%;
+        height: auto;
+    }
+    .secondexperencecard{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+/* <---------------------------------Experenece-card-over-----------------> */
+/* <----------------------------------institute_grid--------------------------------------------> */
+.associatedinstitute{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.associatedheading p{
+    color: #000;
+font-family: Lato;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-top: 2em;
+}
+.associatedsubheading p{
+    color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 145.455% */
+}
+.imagesofinstitute{
+    padding: 23px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 15px;
+}
+.loadmorebutton{
+    margin: 30px;
+    color: white;
+    border: none;
+    border-radius: 50px;
+background: #0F4987;
+width: 145px;
+height: 44px;
+flex-shrink: 0;
+}
+
+@media (max-width:1200px) {
+    .imagesofinstitute{
+        padding: 23px;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        gap: 5px;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+@media (max-width:1000px) {
+    .imagesofinstitute{
+        grid-template-columns: auto auto auto auto auto;
+        gap: 2px;
+    }
+}
+@media (max-width:900px) {
+    .imagesofinstitute{
+        grid-template-columns: auto auto auto auto;
+        gap: 2px;
+    }
+}
+@media (max-width:700px) {
+    .imagesofinstitute{
+        grid-template-columns: auto auto auto;
+        gap: 2px;
+    }
+}@media (max-width:620px) {
+    .imagesofinstitute{
+        grid-template-columns: auto auto;
+        gap: 2px;
+    }
+}
+
+/* <-----------------------------------------institute_grid_over--------------------------> */
+
+.subfooterofsummertraining{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(143deg, #12C2E9 0%, #C471ED 50.28%, #F64F59 100%);
+    width: 100%;
+height: auto;
+padding: 50px;
+}
+.applynowbutton{
+    border-radius: 50px;
+border: 1px solid #FFF;
+color: #FFF;
+background: transparent;
+width: 145px;
+height: 44px;
+flex-shrink: 0;
+}
+/* <-----------------------------footerSection---------------------------> */
+.subfootertext p{
+    color: #FFF;
+text-align: center;
+font-family: Lato;
+font-size: 35px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.subfootertext{
+    margin-left: 4em;
+    margin-right: 4em;
+}
+.mainfooterofsummerinternship{
+    width: 100%;
+height: auto;
+padding: 5px;
+    padding-bottom: 2em;
+flex-shrink: 0;
+background: rgba(17, 17, 17, 0.95);
+padding-top: 4rem;
+}
+.edureifyaboutfooter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.forwhitebox{
+    width: 167.5px;
+height: 50px;
+flex-shrink: 0;
+background: #FFF;
+}
+.footersectionnavigation li{
+    color: #FFF;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+
+}
+.footersectionnavigation ul{
+    display: flex;
+    flex-direction: row;
+}
+.financingpatner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5em;
+    margin-top: 5em;
+}
+.financingpatnerheading p{
+    color: var(--light-grey, #F4F4F4);
+font-family: Lato;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.satyammicrocapital p{
+    color: var(--light-grey, #F4F4F4);
+font-family: Lato;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.forcustomersupport{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center;
+    margin-left: -40px; */
+    margin-left: 5rem;
+}
+.formail{
+    color: var(--light-grey, #F4F4F4);
+font-family: Lato;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin: 15px;
+}
+.lastfooter{
+    display: flex;
+    background: #000;
+    width: 100%;
+height: 28px;
+justify-content: center;
+}
+.lastfooter p{
+    color: var(--light-grey, #F4F4F4);
+font-family: Lato;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 5px;
+}
+/* <-----------------------------------footer-----------------------------> */
+.firstcounterbox{
+    margin-left: 0px !important;
+}
+.thirdcounterbox{
+    margin-left: 0px !important;
+}
+@media (max-width:960px) {
+    .footersectionnavigation li{
+       
+        margin-left: 50px;
+    
+    }
+}
+@media (max-width:800px) {
+    .footersectionnavigation li{
+       
+        margin-left: 25px;
+    
+    }
+    .edureifyaboutfooter{
+        justify-content: normal;
+        
+    }
+    .formail{
+    font-size: 14px;
+    }
+    .financingpatnerheading p{
+    font-size: 18px;
+    }
+    .satyammicrocapital p{
+        color: var(--light-grey, #F4F4F4);
+    font-family: Lato;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+    .subfootertext p{
+    font-size: 22px;
+    }
+}
+@media (max-width:660px) {
+    .footersectionnavigation li{
+       
+        margin-left: 12px;
+    
+    }
+    .financingpatner{
+        margin-left: 1em;
+    }
+    .forcustomersupport{
+        margin-left: 1rem;
+    }
+    .maincounter{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 5px;
+        width: 100%;
+    }
+    .counterofnumber{
+        width: 100%;
+       
+        margin: 18px;
+    }
+    .footersectionnavigation li {
+        margin-left: 12px;
+    }
+    .edureifylogo{
+        margin-left: 0px;
+    }
+}
+@media (max-width:430px) {
+    .howinterworkheading p{
+        font-size: 25px;
+    }
+    .forwhitebox{
+        width:76px;
+        height: auto;
+        margin-top: -11px;
+    }
+    .edureifyfooterlogo{
+        width: 71px;
+    }
+    .footersectionnavigation ul{
+        margin-left: -25px;
+        font-size: 11px;
+    }
+    .financingpatner{ 
+        margin-top: 2em;
+        margin-left: 0em !important;
+        margin-bottom: 1em;
+    }
+    .financingpatnerheading p{
+        font-size: 12px;
+        margin-right: 15px;
+    }
+    .satyammicrocapital p{
+        font-size: 9px;
+    }
+    .formail{
+        margin: 0px;    
+    }
+    .subfootertext{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .subfootertext p{
+        font-size: 18px;
+    }
+    .associatedheading p{
+        font-size: 30px;
+
+    }
+   .pointsofwhochooseus{
+    width: 100%;
+    flex-direction: column;
+   }
+   .associatedsubheading p{
+    font-size: 20px;
+   }
+   .tickcontent{
+    font-size: 16px;
+   }
+   .subtextofdeveloprefine p{
+    font-size: 14px;
+   }
+   .Developrefine p{
+    font-size: 28px;
+   }
+   .coreDomain p{
+    font-size: 28px;
+   }
+   .experenceheading p{
+    font-size: 30px;
+   }
+   .formSection {
+    margin-top: 0px;
+   }
+   .whochooseutext1 p{
+    font-size: 30px;
+   }
+   .whochooseutext2 p{
+    font-size: 23px;
+   }
+   .forcustomersupport{
+    flex-direction: column;
+    margin-left: 0em;
+    align-items: normal;
+   }
+}
+@media (max-width:600px) {
+    .Imageandpoints{
+        flex-direction: column-reverse;
+    }
+    .boxsteps1{
+        flex-direction: column;
+    }
+    .divboximg{
+        display: flex;
+        justify-content: center;
+    }
+    .divboxpoints li{
+        margin-left: 8px;
+    }
+    .whochooseusmain {
+        padding: 50px;
+    }
+    .certificateandtext{
+        flex-direction: column;
+    }
+    .pointsofwhochooseus{
+        width: 100%;
+        flex-direction: column;
+       }
+}
