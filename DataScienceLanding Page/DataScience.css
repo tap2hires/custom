@@ -1,0 +1,1138 @@
+.headerpart{
+    background: linear-gradient(270deg, rgba(1, 93, 254, 0.15) 0%, rgba(4, 39, 103, 0.15) 100%);
+    /* position: relative; */
+    height: 540px;
+    /* height: auto; */
+}
+.heading h1{
+    color: #000;
+font-family: Lato;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 45px;
+}
+.subheading span{
+    margin-right: 12px;
+}
+.subheading{
+    display: flex;
+}
+.resstarmark{
+  color: #F00;
+}
+.subheading p{
+    color: #000;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 550;
+line-height: 20px; /* 125% */
+}
+.downloadbuttondiv{
+  padding-left: 0px;
+  margin-top: 20px;
+}
+
+.jobtitlebox{
+  color: #fff;
+  background-color: #3946B4;
+}
+.downloadsyllabus{
+    border-radius: 40px;
+border: 1px solid #3946B4;
+padding: 10px 20px 10px 20px;
+color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 15px;
+font-style: normal;
+font-weight: 590;
+line-height: normal;
+padding: 13px 20px 13px 20px;
+}
+.downloadsyllabus span{
+  margin-left:8px
+}
+.applynowbutton{
+    background-color: #FFF;
+    border-radius: 25px;
+    width: 100%;
+    color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+
+
+
+.Mainform{
+    border-radius: 20px;
+background: #3946B4;
+/* position: absolute; */
+/* width: 501px;
+height: 697px; */
+}
+.titleofform{
+    color: #FFF;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.labelfield{
+    color: #FFF;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.bottomtext{
+    color: #FFF;
+font-family: Lato;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.whatisdata{
+  margin-top: 9em;
+}
+
+
+
+
+
+
+
+.cardofpopularcourses {
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(145, 145, 145, 0.25);
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 2;
+  }
+  
+  .colorsectionofcard {
+  
+    background: #FD8977;
+    box-shadow: 0px 4px 20px 0px rgba(145, 145, 145, 0.25);
+    width: 100%;
+    height: 237px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .colorsectionofcard1 {
+  
+  
+  
+  
+  
+    background: #3946B4;
+    box-shadow: 0px 4px 20px 0px rgba(145, 145, 145, 0.25);
+    width: 100%;
+    height: 237px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .cardofdatascience{
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(145, 145, 145, 0.25);
+
+/* width: 353px; */
+height: auto;
+border-radius: 20px 20px 0px 0px
+/* height: 680px; */
+  }
+  .cardone{
+    border-radius: 20px 20px 0px 0px;
+background: #3946B4;
+/* box-shadow: 0px 4px 20px 0px rgba(145, 145, 145, 0.25); */
+/* height: 142px; */
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .carddonedifferentcolor{
+    background: #DDE3F0 !important;
+    color: #000 !important;
+    border: none;
+  }
+  .carddonedifferentcolor h2{
+    color: #000 !important;
+font-size: 24px;
+
+font-weight: 500 !important;
+line-height: normal;
+  }
+
+  .cardone h2{
+    color: #FFF;
+font-family: Lato;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+  }
+  .card-text{
+    padding: 13px;
+  }
+  .firstcardofdatascience{
+    /* padding-bottom: 19.7em; */
+    height: auto;
+  }
+  .card-text p{
+    color: #3B3B3B;
+    font-family: Lato;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+  }
+  .tickincard{
+    display: flex;
+  }
+  .tickincard span{
+    margin-right: 8px;
+  }
+
+  .patnershipwithcompany{
+    background: #F4F5F7;
+    width: 100%;
+    height: auto;
+  }
+  .projectbuildcard{
+    border-radius: 20px;
+background: #3946B4;
+box-shadow: 0px 4px 20px 0px rgba(145, 145, 145, 0.25);
+/* width: 255px; */
+
+height: 221px;
+flex-shrink: 0;
+  }
+  .projectbuildcard p{
+    color: #FFF;
+text-align: center;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+  }
+  .headingofpatnership h1{
+    color: #000;
+font-family: Lato;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+  }
+  .paragraphofpatnership p{
+    color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+  .feedback p{
+    color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+  .textofguidance p{
+    color: #000;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+
+.cardofmentor1{
+    border-radius: 15px;
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 32.34%, #000 100%),url(dataScienceimages/Rectangle\ 295mentor1img.png);
+/* background-image: ; */
+width: 256px;
+height: 343px;
+/* width: 100%; */
+}
+.cardofmentor2{
+    border-radius: 15px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 32.34%, #000 100%),url(dataScienceimages/Rectangle\ 295mentorimg2.png);
+    /* background-image: ; */
+    width: 256px;
+    height: 343px;
+}
+.cardofmentor3{
+    border-radius: 15px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 32.34%, #000 100%),url(dataScienceimages/Rectangle\ 295mentorimg3.png);
+    /* background-image: ; */
+    width: 256px;
+    height: 343px;
+}
+.cardofmentor4{
+    border-radius: 15px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 32.34%, #000 100%),url(dataScienceimages/Rectangle\ 294mentorimg4.png);
+
+    width: 256px;
+    height: 343px;
+}
+.nameandinimg{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nameofmentor2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 32.34%, #000 100%); */
+    padding-top: 16rem;
+  }
+  .nameofmentor2 h3{
+    color: #FFF;
+text-align: center;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+  }
+  .nameofteacher{
+    margin-left: 22px;
+  }
+  .nameofmentor2 p{
+    color: #5B96FE;
+text-align: center;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+  }
+  .headingofteacher h2{
+    color: #000;
+font-family: Lato;
+font-size: 35px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+  }
+  .subheadingofteachers p{
+    color: #000;
+font-family: Lato;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+
+  .cardforteachers{
+    border-radius: 10px;
+border: 1px solid #3946B4;
+/* width: 256px; */
+width: 100%;
+/* height: 306px; */
+height: auto;
+  }
+  /* .cardimg img{
+    border-radius: 10px 10px 0px 0px;
+background: linear-gradient(180deg, rgba(26, 1, 184, 0.00) 100%, rgba(0, 34, 155, 0.70) 100%) !important;
+opacity: 4;
+  } */
+  .cardimg{
+    /* width: 256px; */
+height: 188px;
+border-radius: 10px 10px 0px 0px;
+background: 
+linear-gradient(180deg, rgba(26, 1, 184, 0.00) 0%, rgba(0, 34, 155, 0.70) 100%)
+,
+url(dataScienceimages/Rectangle\ 311teacherimg1.png)
+;
+  }
+  .line{
+    background: #5B96FE;
+height: 1px;
+width: 82%;
+
+  }
+  
+  .inimg{
+    padding-left: 0px !important;
+    margin-right: 25px;
+  }
+  .Readmore{
+    display: flex;
+  }
+  .Readmore p{
+    color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-top: 2px;
+margin-left: 2px !important;
+  }
+  .imgofEXcompany{
+    display: flex;
+  }
+  .imgofEXcompany p{
+    color: #5B96FE;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-right: 12px;
+margin-bottom: 0rem !important;
+  }
+  .imgofEXcompany img{
+    width: 69px;
+height: 19px;
+  }
+.bluesectionofrequest{
+  background: #E5E7FB;
+  /* height: 389px; */
+  height: auto;
+  width: 100%;
+}  
+.connectwithheading{
+  padding-top: 4em;
+  padding-bottom:4em;
+}
+.connectwithheading h2{
+  color: #000;
+font-family: Lato;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.connectwithheading p{
+  color: #000;
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.connectwithheading h6{
+  color: #000;
+font-family: Lato;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 1rem;
+}
+.requestbutton{
+  border-radius: 40px;
+background: #3946B4;
+color: #FFF;
+padding: 12px 30px 12px 30px;
+}
+.headingofhelpforprepare h2{
+  color: #000;
+font-family: Lato;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.cardofjobsearch{
+  border-radius: 20px;
+  border: 1px solid #3946B4;
+  box-shadow: 0px 4px 20px 0px rgba(145, 145, 145, 0.25);
+  /* width: 255px; */
+  
+  height: 221px;
+}
+.cardofjobsearch p{
+  color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.headingsofaluminicompany h2{
+  color: #000;
+  text-align: center;
+  font-family: Lato;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.companygrid{
+  border-radius: 15px;
+border: 1px solid #DCE1EC;
+background: #FFF;
+/* width: 173.224px; */
+width: 100%;
+height: 99.276px;
+flex-shrink: 0;
+margin-bottom: 8px;
+}
+.edureifystudent{
+  background: #E5E7FB;
+  /* height: 569px; */
+  height: 100%;
+}
+.loadbutton{
+  border-radius: 40px;
+background: #3946B4;
+color: white;
+padding: 12px 30px 12px 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.abtSay {
+  border-radius: 20px;
+  border: 2px solid #0F498733;
+  padding: 30px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.titles h2 {
+  font-family: Lato;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.titles p {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #015DFE;
+
+}
+.textArea {
+  color: #3B3B3B;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.QuestionAsk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+  width: 100%;
+  /* height: 950px; */
+  left: 0px;
+
+  /* background: linear-gradient(143deg, #3946b4 0%, #002f84 100%); */
+
+  /* padding-left: 50px;
+  padding-right: 50px; */
+  /* padding-bottom: 70px; */
+  padding-top: 15px;
+}
+
+.ContentBoxBhaiMaiHu {
+  height: 350px !important;
+  max-height: 400px !important;
+
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: center;
+}
+.ExploreAllFeaturesButton234 {
+  width: 253px;
+  height: 57px;
+  border-radius: 40px;
+  border: 2px solid #3946B4;
+  background: #FFF;
+  text-align: center;
+ 
+  font-size: 20px;
+  color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+  
+}
+.label{
+  border-radius: 8px;
+border: 1px solid #B5B9DF;
+background: var(--white, #FFF);
+color: #000;
+}
+.ExploreButtonDIV564 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+ 
+  margin-top: 80px;
+}
+.accordion {
+  width: 100%;
+}
+
+.accordion .contentBx {
+  position: relative;
+  margin: 10px 30px;
+}
+
+
+.boxName {
+  margin-left: 30px;
+  margin-top: 15px;
+
+  word-break: break-all !important;
+
+  color: #000;
+ 
+  font-size: 24px;
+  font-family: lato;
+  font-weight: 500;
+  
+}
+
+.accordion .contentBx .label {
+  position: relative;
+  padding: 8px;
+  color: #454545;
+  cursor: pointer;
+  background: #ffffff;
+  border-radius: 10px;
+  min-height: 72px;
+}
+
+/* ------------------------------------------------------------------- */
+/* Your existing CSS code remains the same */
+.accordion .contentBx .label::before {
+  /* Replace the "+" symbol with the Font Awesome icon */
+  content: "\f055"; /* Unicode for the fa-plus-circle icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  color: #015dfe;
+  top: 35px;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1em;
+}
+
+/* Rest of your existing CSS code remains the same */
+
+/* Your existing CSS code remains the same */
+.accordion .contentBx.active .label::before {
+  /* Replace the "-" symbol with the Font Awesome icon */
+  content: "\f056"; /* Unicode for the fa-minus-circle icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: rgb(49, 62, 182);
+  right: 20px;
+}
+/* Rest of your existing CSS code remains the same */
+
+/* -------------------------------------------------------------------------- */
+.accordion .contentBx .content {
+  position: relative;
+  background: white;
+  height: 0;
+  overflow: hidden;
+  /* transition: 0.5s; */
+  border: none;
+  margin-left: 55px;
+  overflow-y: hidden;
+}
+
+.accordion .contentBx.active .content {
+  min-height: 50px;
+
+  padding: 6px 0px 3px 0px;
+}
+
+.payAfterHead {
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 90px;
+font-family: lato;
+  padding-bottom: 40px;
+color: #000;
+
+  font-size: 36px;
+  
+}
+.content {
+  display: none;
+}
+.active .content {
+  display: block;
+}
+
+.curriculamsection{
+  height: 1000px;
+  background: #F4F5F7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Style for content divs */
+.content {
+  display: none;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.curriculambackground{
+  height: auto;
+  background: #F4F5F7;
+  width: 100%;
+}
+.buttonsof{
+  /* width: 352px; */
+height: 76px;
+background-color: #fff;
+  
+}
+.radiobutton{
+  width: 23px;
+  height: 70px;
+}
+.duration{
+  display: flex;
+}
+
+
+
+
+
+
+/* <--------------------------------------------------------> */
+.beginner{
+  background: #6A7AFF;
+  min-height: 800px;
+  height: auto;
+}
+.individualmodule{
+  border-radius: 15px;
+background: #FFF;
+/* width: 526px; */
+height: 98px;
+flex-shrink: 0;
+}
+.headingofcurriculamdesign h2{
+  color: #000;
+text-align: center;
+font-family: Lato;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.firstmodule p{
+  margin-bottom: 0rem !important;
+  /* color: #FFF; */
+
+font-family: Lato;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.firstmodule h6{
+  /* color: #FFF !important; */
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.moduletext p{
+margin-bottom: 0rem !important;
+/* color: #000; */
+
+font-family: Lato;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.moduletext h6{
+  /* color: #000; */
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.durationtext p{
+  /* color: #000; */
+text-align: center;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.durationActivity{
+  border-radius: 15px;
+background: #FFF;
+height: auto;
+  min-height: 370px;
+}
+
+
+
+#durationdetaildiv6{
+display: none;
+}
+#durationdetaildiv5{
+display: none;
+}
+#durationdetaildiv4{
+display: none;
+}
+#durationdetaildiv3{
+display: none;
+}
+#durationdetaildiv2{
+display: none;
+}
+
+
+.headingofdifficulty{
+padding-left: 0px;
+}
+.headingofdifficulty h2{
+/* color: #000; */
+font-family: Lato;
+font-size: 24px;
+font-style: normal;
+font-weight: 550;
+line-height: normal;
+}
+
+
+.duration p{
+/* color: #000; */
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-top: 4px;
+margin-left: 6px;
+}
+
+
+
+
+
+.courseboxes{
+  border-radius: 15px;
+border: 1px solid #000;
+background: #3946B4;
+position: relative;
+margin: 10px 30px;
+color: #fff;
+}
+
+.accordionfeature .courseboxes .courseheading::before {
+  /* Replace the "+" symbol with the Font Awesome icon */
+  content: "\f055"; /* Unicode for the fa-plus-circle icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+ color: #fff;
+  top: 35px;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1em;
+}
+
+.accordionfeature .courseboxes .courseheading {
+  position: relative;
+  padding: 8px;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  min-height: 72px;
+}
+
+.accordionfeature .courseboxes.active .courseheading::before {
+  /* Replace the "-" symbol with the Font Awesome icon */
+  content: "\f056"; /* Unicode for the fa-minus-circle icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  /* color: rgb(0, 247, 255); */
+  right: 20px;
+}
+
+
+.accordionfeature .courseboxes .innercontent {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  /* transition: 0.5s; */
+background-color: #fff;
+color: #000;
+background: #FFF;
+  overflow-y: hidden;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.accordionfeature .courseboxes.active .innercontent {
+  min-height: 50px;
+
+  padding: 6px 0px 3px 0px;
+}
+
+.courseheading p {
+  margin-left: 30px;
+  margin-top: 15px;
+
+  word-break: break-all !important;
+  
+}
+.innercontent p{
+  margin-left: 40px;
+}
+.durationActivity{
+  width: 100%;
+}
+
+.downloadbutton{
+  border-radius: 40px;
+background: #FFF;
+color: #000;
+font-family: Lato;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding: 18px 25px 18px 25px;
+}
+
+.downloadbutton span{
+  padding-left: 8px;
+}
+
+
+
+
+
+
+@media (max-width:770px) {
+  .headingofdifficulty{
+    padding-left: 30px;
+  }
+  .durationtext{
+    margin-top: 0px !important;
+  }
+  .radiobutton{
+    display: none;
+  }
+  .individualmodule{
+    margin-top: 0.5em;
+  }
+}
+@media (max-width:520px) {
+  .moduletext h6 {
+    font-size: 15px;
+  }
+  
+
+.moduletext p {
+  font-size: 12px;
+}
+.durationtext p {
+  font-size: 13px;
+}
+}
