@@ -1,0 +1,156 @@
+ /* CSS for the divs */
+ .toggle-div {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background-color: #f0f0f0;
+  }
+
+  /* CSS for the hidden content */
+  .hidden-content {
+    display: none;
+    /* padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    background-color: #f9f9f9; */
+  }
+
+  .personalinformation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    /* background-color: rgb(231, 225, 201); */
+    box-shadow: 0px 4px 20px 0px rgba(145, 145, 145, 0.25);
+    border-radius: 20px;
+  }
+
+  .personalinformation:hover {
+    cursor: pointer;
+  }
+
+  .personalinformation p {
+    margin-bottom: 0px !important;
+  }
+
+
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+  
+  /* #cv-form{
+      display: none;
+  } */
+  /* #cv-template{
+    display:none;
+  } */
+  
+  .firstSectionofContainer{
+    width: 100%;
+    height: auto;
+    background-color: rgb(29, 61, 73);
+  }
+  
+  .nameofperson{
+    color: #fff;
+    font-weight: 550;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .nameofperson h6{
+    color: rgb(26, 151, 151) !important;
+  }
+  .nameofperson p{
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .profileimg{
+    width: 200px;
+    border-radius: 50%;
+  
+  }
+  .secondsection{
+    width: 100%;
+    height: auto;
+    background-color: rgb(13, 13, 26);
+  }
+  .mailsection{
+    display: flex;
+  }
+  .mailsection p{
+    color: aliceblue;
+  }
+  .mailsection span{
+    margin-right: 8px;
+  }
+  .linkdin{
+    display: flex;
+  }
+  .linkdin span{
+    margin-right: 8px;
+  }
+  a{
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+  .headings{
+    color: rgb(26, 151, 151);
+    font-weight: 500;
+    text-decoration: underline;
+  
+  }
+  .collegename p{
+    color: rgb(26, 151, 151);
+    font-weight: 500;
+  }
+  .achivelist li{
+    list-style: none;
+    margin-bottom: 10px;
+    margin-top: 11px;
+    font-weight: 500;
+  }
+  .achivelist{
+    padding-left: 0rem;
+  }
+  .skillslist{
+   
+    list-style: none;
+    padding-left: 0rem !important;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 12px;
+  }
+  .skillslist li{
+    background-color: rgb(16, 82, 82);
+    color: #fff;
+    border-radius: 23px;
+    text-align: center;
+    margin-bottom: 0.4em;
+    padding: 5px;
+  }
+  .projectheading{
+    list-style: none;
+    padding-left: 0rem;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+    
+  }
+  .aboutproject{
+   color: rgb(26, 151, 151); 
+   list-style: disc;
+   font-size: 15px;
+   font-weight: 400px;
+  }
+  .aboutproject span{
+    color: black;
+  }
+  .projectpart{
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
