@@ -1,4 +1,15 @@
  /* CSS for the divs */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f2f2f2;
+}
+
  .toggle-div {
     cursor: pointer;
     padding: 10px;
@@ -10,10 +21,7 @@
   /* CSS for the hidden content */
   .hidden-content {
     display: none;
-    /* padding: 10px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
-    background-color: #f9f9f9; */
+
   }
 
   .personalinformation {
@@ -47,9 +55,9 @@
   /* #cv-form{
       display: none;
   } */
-  /* #cv-template{
-    display:none;
-  } */
+  #cv-template{
+    min-height: 100vh;
+  }
   
   .firstSectionofContainer{
     width: 100%;
@@ -153,4 +161,8 @@
   .projectpart{
     margin-bottom: 15px;
     margin-top: 15px;
+  }
+
+  .selectformatdiv{
+    display: none;
   }

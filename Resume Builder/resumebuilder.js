@@ -16,6 +16,32 @@ function toggleContent(divNumber) {
 }
 
 
+let educationCounter = 1; // Initialize the counter for educational entries
+
+function addEducation() {
+  educationCounter++; // Increment the counter for each new entry
+
+  // Clone the educational information fields
+  const educationClone = document.getElementById('idforaddingedu').cloneNode(true);
+
+  // Update the header to indicate the education number
+  const educationHeader = educationClone.querySelector('h5');
+  educationHeader.textContent = `(Education #${educationCounter})`;
+
+  // Generate unique IDs for the cloned input fields
+  educationClone.querySelectorAll('.eduField').forEach((input) => {
+    const fieldName = input.getAttribute('data-field');
+    const uniqueId = `${fieldName}${educationCounter}`;
+    input.id = uniqueId;
+    input.value = ''; // Clear the input field
+  });
+  educationClone.addEventListener('input',updateEducationTemplate);
+  // Append the cloned section to the form
+  document.getElementById('idforaddingedu').parentNode.insertBefore(educationClone, document.getElementById('addeducationfield'));
+
+  // Update the education template immediately after cloning
+  // updateEducationTemplate();
+}
 
 
 function updateEducationTemplate() {
@@ -58,76 +84,8 @@ function updateEducationTemplate() {
     }
   });
 }
-function updateWorkingtionTemplate() {
-  const workExpList = document.getElementById('workexpList');
-  workExpList.innerHTML = ''; // Clear existing entries
-
-  const workingSections = document.querySelectorAll('.workexpfield');
-  let index = 1; // Initialize an index for each entry
-
-  workingSections.forEach((field, fieldIndex) => {
-    // Check if the current field is the last in a group of 4 (companyName, city, jobTitle, timePeriod)
-    if (fieldIndex % 4 === 0) {
-      const companyName = field.value;
-      const city = workingSections[fieldIndex + 1].value;
-      const jobTitle = workingSections[fieldIndex + 2].value;
-      const timePeriod = workingSections[fieldIndex + 3].value;
-
-      // Create a new work experience element
-      const workingElement = document.createElement('div');
-      workingElement.classList.add('collegename');
-      workingElement.innerHTML = `
-        <h4><b>${companyName}</b></h4>  
-        <h6>${city}</h6>
-        <div class="row">
-          <div class="col-md-6">
-            <p>${jobTitle}</p>
-          </div>
-          <div class="col-md">
-            <p>${timePeriod}</p>
-          </div>
-        </div>
-      `;
-
-      // Append the work experience element to the work experience list
-      workExpList.appendChild(workingElement);
-
-      // Update the index for the next set of fields
-      index++;
-    }
-  });
-}
 
 
-let educationCounter = 1; // Initialize the counter for educational entries
-
-function addEducation() {
-  educationCounter++; // Increment the counter for each new entry
-
-  // Clone the educational information fields
-  const educationClone = document.getElementById('idforaddingedu').cloneNode(true);
-
-  // Update the header to indicate the education number
-  const educationHeader = educationClone.querySelector('h5');
-  educationHeader.textContent = `(Education #${educationCounter})`;
-
-  // Generate unique IDs for the cloned input fields
-  educationClone.querySelectorAll('.eduField').forEach((input) => {
-    const fieldName = input.getAttribute('data-field');
-    const uniqueId = `${fieldName}${educationCounter}`;
-    input.id = uniqueId;
-    input.value = ''; // Clear the input field
-  });
-
-  // Append the cloned section to the form
-  document.getElementById('idforaddingedu').parentNode.insertBefore(educationClone, document.getElementById('addeducationfield'));
-
-  // Update the education template immediately after cloning
-  updateEducationTemplate();
-}
-
-
-// this java script is for Adding Work field
 
 let workexpCounter = 1;
 
@@ -146,9 +104,55 @@ function addWorkexp() {
   });
 
   document.getElementById('idforaddingwork').parentNode.insertBefore(WorkingClone, document.getElementById('addWorkfield'));
-
-  updateWorkingtionTemplate();
+  WorkingClone.addEventListener('input',updateWorkingtionTemplate)
+  // updateWorkingtionTemplate();
 }
+
+function updateWorkingtionTemplate() {
+  const workExpList = document.getElementById('workexpList');
+  workExpList.innerHTML = ''; // Clear existing entries
+
+  const workingSections = document.querySelectorAll('.workexpfield');
+  let index = 1; // Initialize an index for each entry
+
+  workingSections.forEach((field, fieldIndex) => {
+    // Check if the current field is the last in a group of 4 (companyName, city, jobTitle, timePeriod)
+    if (fieldIndex % 4 === 0) {
+      const companyName = field.value;
+      const city = workingSections[fieldIndex + 1].value;
+      const jobTitle = workingSections[fieldIndex + 2].value;
+      const worktimePeriod = workingSections[fieldIndex + 3].value;
+
+      // Create a new work experience element
+      const workingElement = document.createElement('div');
+      workingElement.classList.add('collegename');
+      workingElement.innerHTML = `
+        <h4><b>${companyName}</b></h4>  
+        <h6>${city}</h6>
+        <div class="row">
+          <div class="col-md-6">
+            <p>${jobTitle}</p>
+          </div>
+          <div class="col-md">
+            <p>${worktimePeriod}</p>
+          </div>
+        </div>
+      `;
+
+      // Append the work experience element to the work experience list
+      workExpList.appendChild(workingElement);
+
+      // Update the index for the next set of fields
+      index++;
+    }
+  });
+}
+
+
+
+
+// this java script is for Adding Work field
+
 
     // this java script is for Adding Skills field
 
@@ -159,22 +163,6 @@ function addWorkexp() {
       });
       document.getElementById('idforaddingskills').parentNode.insertBefore(SkillsClone,document.getElementById('addskillsfield'));
     }
-
-
-
-
-  //   function addachievementField() {
-  //     let newNode=document.createElement("textarea");
-  //     newNode.classList.add("form-control");
-  //     newNode.classList.add("achievementField");
-  //     newNode.classList.add("mt-2");
-  //     newNode.setAttribute("rows",2);
-  
-  //    let eqOb=document.getElementById("achievement");
-  //    let eqaddachievementbuttonOb=document.getElementById("addachievementbutton");
-  
-  //    eqOb.insertBefore(newNode, eqaddachievementbuttonOb);
-  // }
   function addAchievementField() {
     // Create a new textarea element
     let newAchievementField = document.createElement("textarea");
@@ -289,11 +277,6 @@ reader.readAsDataURL(file);
 reader.onloadend=function (){
 document.getElementById("imgT").src =reader.result;
 }
-
-
-
-
-
 }
 
 // Listen for changes in form fields and update the template
@@ -313,15 +296,18 @@ achievementFields.forEach(function (field) {
 });
 
 
-document.getElementById('instituteName2').addEventListener('input', updateEducationTemplate);
-document.getElementById('degree2').addEventListener('input', updateEducationTemplate);
-document.getElementById('timePeriod2').addEventListener('input', updateEducationTemplate);
-document.getElementById('cgpa2').addEventListener('input', updateEducationTemplate);
+document.getElementById('instituteName1').addEventListener('input', updateEducationTemplate);
+document.getElementById('degree1').addEventListener('input', updateEducationTemplate);
+document.getElementById('timeperiod1').addEventListener('input', updateEducationTemplate);
+document.getElementById('cgpa1').addEventListener('input', updateEducationTemplate);
+
 // Listen for changes in educational form fields and update the template
-document.getElementById('companyName2').addEventListener('input', updateWorkingtionTemplate);
-document.getElementById('city2').addEventListener('input', updateWorkingtionTemplate);
-document.getElementById('jobTitle2').addEventListener('input', updateWorkingtionTemplate);
-document.getElementById('timeperiod2').addEventListener('input', updateWorkingtionTemplate);
+
+
+document.getElementById('companyName1').addEventListener('input', updateWorkingtionTemplate);
+document.getElementById('city1').addEventListener('input', updateWorkingtionTemplate);
+document.getElementById('jobTitle1').addEventListener('input', updateWorkingtionTemplate);
+document.getElementById('worktimePeriod1').addEventListener('input', updateWorkingtionTemplate);
 
 
 
@@ -340,7 +326,26 @@ function previewCV() {
 
   document.querySelector('#cv-template').classList.remove('col-md-6');
   // document.querySelector('#cv-template').classList.add('" "');
+  document.querySelector('.selectformatdiv').style.display='block';
 }
 
+function generatePDF() {
+  const element = document.getElementById("cv-template");
 
+  // Define custom page size in millimeters (A4 size is 210x297 mm)
+  const pageSize = {
+    width: 210,
+    height: 297,
+  };
+
+  const pdfOptions = {
+    margin: 0,  // Optional margin
+    filename: 'Resume.pdf',
+    image: { type: 'jpeg', quality: 0.99 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: [pageSize.width, pageSize.height], orientation: 'portrait' },
+  };
+
+  html2pdf().from(element).set(pdfOptions).save();
+}
 
