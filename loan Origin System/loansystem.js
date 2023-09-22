@@ -19,35 +19,33 @@ const customQuestions = [
   "Great! Can you provide your contact Number?",
   "Thanks for providing please Share your Aadhar Number",
   "Thank you for the information. Now Upload Your PanCard",
-  "Got it. please Upload Your Current Image click the camera icon to take Picture",
-  "Thank you for The Image. Now Enter your Address",
+  "Got it. please Upload Your Current Image click the below camera icon to take Picture",
+  "Thank you for The Image ✅. Now Enter your permanent Address",
 ];
 
-const gestures = ["👍", "📞", "🆔", "💳", "📷", "✅"];
+const gestures = ["👍", "📞", "🆔", "💳", "📷",];
 
 customQuestions.push("What is your current employment status?");
 customQuestions.push("Please provide your monthly income.");
-customQuestions.push("Do you own a house or property? (Yes/No)");
+customQuestions.push("Are you applying for an education loan? (Yes/No)");
 // customQuestions.push("Now tell me about your family");
 // customQuestions.push("Great buddy!! give a highfive and tell me more ");
 
-
 const yesQuestions = [
-  "Please provide additional details about your property.",
-  "What is the estimated value of your property?",
-  "Please provide additional details about your property.",
-  "What is the estimated value of your property?",
+  "What is the purpose of the education loan?",
+  "Which educational institution are you planning to attend?",
+  "What is the estimated cost of your education?",
+  "Which Cource/Degree You Want to Do?",
   // Add more "Yes" questions here
 ];
 
 const noQuestions = [
-  "Would you like to rent a property instead?",
-  "Would you like to rent a your house instead? ",
+  "What Kind Of loan You Want",
+  "Would you like to rent a your house instead?",
   "Would you like to rent a property instead?",
 
   // Add more "No" questions here
 ];
-
 
 const CreateCharLi = (message, className, gesture = "") => {
   const chatli = document.createElement("li");
@@ -62,7 +60,6 @@ const CreateCharLi = (message, className, gesture = "") => {
 };
 
 var count = 0;
-
 
 const handleChat = () => {
   const outgoingarr = [
@@ -105,7 +102,7 @@ const handleChat = () => {
         // Display the attachment field as an incoming message
         const attachmentField = document.createElement("div");
         attachmentField.innerHTML = `
-      <p>Click here to upload your document:</p>
+      <p>Click here to Attach your document:</p>
       <input
         type="file"
         id="attachment-input"
@@ -126,7 +123,7 @@ const handleChat = () => {
           >attach_file</span
         >
       </label>
-    `;
+     `;
         attachmentField.classList.add("chat", "incoming");
         ChatBox.appendChild(attachmentField);
         fileInput = attachmentField.querySelector("input[type=file]");
@@ -153,7 +150,7 @@ const handleChat = () => {
           });
 
           // Display questions from the "yesQuestions" array
-          displayNextQuestion(yesQuestions);
+          displayyesnoQuestion(yesQuestions);
           // console.log("hello");
         });
 
@@ -166,7 +163,7 @@ const handleChat = () => {
           });
 
           // Display questions from the "noQuestions" array
-          displayNextQuestion(noQuestions);
+          displayyesnoQuestion(noQuestions);
         });
 
         yesNoButtons.appendChild(yesButton);
@@ -174,14 +171,29 @@ const handleChat = () => {
         ChatBox.appendChild(yesNoButtons);
       }
       ChatBox.scrollTop = ChatBox.scrollHeight;
-
-
     }
+    // else{
+    // }
   }, 600);
 };
 
-let forindexcount = 0
+let forindexcount = 0;
 
+const displayyesnoQuestion = (questionArray) => {
+  setTimeout(() => {
+    if (forindexcount < questionArray.length) {
+      // Add the chatbot's incoming message with the next question and gesture
+      const nextQuestion1 = questionArray[forindexcount];
+      ChatBox.appendChild(CreateCharLi(nextQuestion1, "incoming"));
+      ChatBox.scrollTop = ChatBox.scrollHeight;
+      forindexcount++;
+    //   console.log(forindexcount);
+    } else {
+      // If there are no more questions in the array, continue with the main questions
+      displayNextMainQuestion();
+    }
+  }, 600);
+};
 
 const displayNextQuestion = (questionArray) => {
   // Add the user's outgoing message to the chat
@@ -203,14 +215,10 @@ const displayNextQuestion = (questionArray) => {
       // If there are no more questions in the array, continue with the main questions
       displayNextMainQuestion();
     }
-    
   }, 600);
 };
 
-
-
 const displayNextMainQuestion = () => {
-
   setTimeout(() => {
     if (currentQuestionIndex < customQuestions.length) {
       // Add the chatbot's incoming message with the next question and gesture
@@ -220,10 +228,16 @@ const displayNextMainQuestion = () => {
       currentQuestionIndex++;
 
       ChatBox.scrollTop = ChatBox.scrollHeight;
-    }
-    else {
+    } else {
       // If all questions are answered, the chatbot can provide a closing message
-      ChatBox.appendChild(CreateCharLi("Thank you for completing the loan application.", "incoming", "✅"));
+      ChatBox.appendChild(
+        CreateCharLi(
+          "Thank you for completing the loan application.",
+          "incoming",
+          "✅"
+        )
+      );
+      ChatBox.scrollTop = ChatBox.scrollHeight;
       sendChatBtn.disabled = true; // Disable the send button to prevent further input
 
       // Convert outgoingMessages to JSON and log it
@@ -232,9 +246,6 @@ const displayNextMainQuestion = () => {
     }
   }, 600);
 };
-
-
-
 
 const handleFileUpload = (fileInput) => {
   // const capturedImages = [];
@@ -259,9 +270,7 @@ const handleFileUpload = (fileInput) => {
       if (currentQuestionIndex < customQuestions.length) {
         const nextQuestion = customQuestions[currentQuestionIndex];
         const gesture = gestures[currentQuestionIndex];
-        ChatBox.appendChild(
-          CreateCharLi(nextQuestion, "incoming", gesture)
-        );
+        ChatBox.appendChild(CreateCharLi(nextQuestion, "incoming", gesture));
         currentQuestionIndex++;
 
         if (currentQuestionIndex === 5) {
@@ -310,6 +319,7 @@ const openWebcam = () => {
 
   const closeButton = document.createElement("button");
   closeButton.innerText = "❌";
+  captureButton.classList.add("captureStyle");
   closeButton.classList.add("capture-button");
 
   closeButton.addEventListener("click", () => {
@@ -354,9 +364,7 @@ const openWebcam = () => {
         //   console.log(outgoingMessages);
 
         // Send the cropped image to the chat as an outgoing message
-        ChatBox.appendChild(
-          CreateCharLi("Captured Image ✅", "outgoing")
-        );
+        ChatBox.appendChild(CreateCharLi("Captured Image ✅", "outgoing"));
         const imageElement = document.createElement("img");
         imageElement.src = croppedImageDataURL;
         ChatBox.appendChild(imageElement);
@@ -531,11 +539,11 @@ if (cameraIcon) {
 ChatInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     if (currentQuestionIndex === 9) {
-      if (flag === 1) { // Use triple equals for comparison
+      if (flag === 1) {
+        // Use triple equals for comparison
         event.preventDefault();
         displayNextQuestion(noQuestions);
       } else {
-
         event.preventDefault();
         displayNextQuestion(yesQuestions);
       }
@@ -546,7 +554,17 @@ ChatInput.addEventListener("keydown", (event) => {
   }
 });
 
-sendChatBtn.addEventListener("click", handleChat);
+sendChatBtn.addEventListener("click", () => {
+  if (currentQuestionIndex === 9) {
+    if (flag === 1) {
+      displayNextQuestion(noQuestions);
+    } else {
+      displayNextQuestion(yesQuestions);
+    }
+  } else {
+    handleChat();
+  }
+});
 
 if (customQuestions.length > 0) {
   const initialQuestion = customQuestions[0];

@@ -114,12 +114,14 @@ body {
   padding: 12px 11px 12px 0;
 }
 
-.captureStyle{
+.captureStyle {
   background-color: #6672dd;
   color: #fff;
   border: none;
   margin-right: 5px;
-  padding: 2px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+  border-radius: 20px;
 }
 
 .chat-input span {
