@@ -7,11 +7,14 @@ let currentQuestionIndex = 0;
 let fileInput;
 let capturedImage = null;
 let cropper = null;
-const cameraIcon = document.getElementById("camera-icon");
+const cameraIcon = document.getElementById("iconforcam");
 let webcamStream;
 let capturedImageData = null; // To store the captured image
 
 let flag = 0;
+
+const aadharNumberPattern = /^\d{12}$/;
+
 
 // Define an array of custom questions for the loan application
 const customQuestions = [
@@ -20,7 +23,9 @@ const customQuestions = [
   "Thanks for providing please Share your Aadhar Number",
   "Thank you for the information. Now Upload Your PanCard",
   "Got it. please Upload Your Current Image click the below camera icon to take Picture",
-  "Thank you for The Image ✅. Now Enter your permanent Address",
+  "Thank you for The Image ✅.Now Enter your permanent Address",
+  "Enter your Father's Name",
+  "Enter your Mother's Name",
 ];
 
 const gestures = ["👍", "📞", "🆔", "💳", "📷",];
@@ -67,6 +72,8 @@ const handleChat = () => {
     "PhoneNumber",
     "Aadharcard",
     "Address",
+    "father's Name",
+    "Mother's Name",
     "EmploymentStatus",
     "MonthlyIncome",
   ];
@@ -74,6 +81,7 @@ const handleChat = () => {
   userMessage = ChatInput.value.trim();
 
   if (!userMessage) return;
+
 
   // Add the user's outgoing message to the chat
   ChatBox.appendChild(CreateCharLi(userMessage, "outgoing"));
@@ -87,6 +95,13 @@ const handleChat = () => {
     count++;
   }
 
+  if (count === 1) {
+    // Store the user's name when answering the first question
+    userName = userMessage.split(' ')[0];
+    // Modify the second question to display the user's name
+    customQuestions[1] = `Great, ${userName}! Can you provide your contact Number?`;
+  }
+
   // Clear the input field
   ChatInput.value = "";
 
@@ -96,40 +111,48 @@ const handleChat = () => {
       const nextQuestion = customQuestions[currentQuestionIndex];
       const gesture = gestures[currentQuestionIndex];
       ChatBox.appendChild(CreateCharLi(nextQuestion, "incoming", gesture));
-      currentQuestionIndex++;
+      if (currentQuestionIndex === 3) { // Check if it's the Aadhar card question
+        if (!aadharNumberPattern.test(userMessage)) {
+          // User input does not match the Aadhar card format
+          alert("Please enter a valid Aadhar card number with 12 digits.");
+          location.reload();
+          return; // Prevent further processing
+        }
+      }
 
-      if (currentQuestionIndex === 4) {
+      if (currentQuestionIndex === 3) {
         // Display the attachment field as an incoming message
         const attachmentField = document.createElement("div");
         attachmentField.innerHTML = `
-      <p>Click here to Attach your document:</p>
-      <input
-        type="file"
-        id="attachment-input"
-        style="display: none"
-        accept="application/pdf, image/*"
-      />
-      <label for="attachment-input" style="cursor: pointer">
-        <span
-          class="material-symbols-outlined"
-          style="
-            font-size: 1.7rem;
-            color: #000;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-top: 4px;
-            background: #fff;
-          "
-          >attach_file</span
-        >
-      </label>
-     `;
+  <p>Click here to Attach your document:</p>
+  <input
+    type="file"
+    id="attachment-input"
+    style="display: none"
+    accept="application/pdf, image/*"
+  />
+  <label for="attachment-input" style="cursor: pointer">
+    <span
+      class="material-symbols-outlined"
+      style="
+        font-size: 1.7rem;
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-top: 4px;
+        background: #fff;
+      "
+      >attach_file</span
+    >
+  </label>
+ `;
         attachmentField.classList.add("chat", "incoming");
         ChatBox.appendChild(attachmentField);
         fileInput = attachmentField.querySelector("input[type=file]");
         fileInput.addEventListener("change", () => handleFileUpload(fileInput));
       }
-      if (currentQuestionIndex === 9) {
+
+      if (currentQuestionIndex === 10) {
         // Display "Yes" and "No" options for the 9th question
         const yesNoButtons = document.createElement("div");
         yesNoButtons.classList.add("yes-no-buttons");
@@ -151,7 +174,7 @@ const handleChat = () => {
 
           // Display questions from the "yesQuestions" array
           displayyesnoQuestion(yesQuestions);
-          // console.log("hello");
+
         });
 
         noButton.addEventListener("click", () => {
@@ -171,6 +194,7 @@ const handleChat = () => {
         ChatBox.appendChild(yesNoButtons);
       }
       ChatBox.scrollTop = ChatBox.scrollHeight;
+      currentQuestionIndex++;
     }
     // else{
     // }
@@ -187,7 +211,7 @@ const displayyesnoQuestion = (questionArray) => {
       ChatBox.appendChild(CreateCharLi(nextQuestion1, "incoming"));
       ChatBox.scrollTop = ChatBox.scrollHeight;
       forindexcount++;
-    //   console.log(forindexcount);
+
     } else {
       // If there are no more questions in the array, continue with the main questions
       displayNextMainQuestion();
@@ -210,7 +234,7 @@ const displayNextQuestion = (questionArray) => {
       ChatBox.appendChild(CreateCharLi(nextQuestion1, "incoming"));
       ChatBox.scrollTop = ChatBox.scrollHeight;
       forindexcount++;
-      console.log(forindexcount);
+
     } else {
       // If there are no more questions in the array, continue with the main questions
       displayNextMainQuestion();
@@ -274,7 +298,23 @@ const handleFileUpload = (fileInput) => {
         currentQuestionIndex++;
 
         if (currentQuestionIndex === 5) {
-          document.querySelector(".cameraicon").style.display = "block";
+          // document.querySelector(".cameraicon").style.display = "block";
+          const CammeraapperarField = document.createElement("div");
+          CammeraapperarField.innerHTML = `
+  <p>Click here to Click your Image:</p>
+  <span id="camera-icon iconforcam" class="material-symbols-outlined cameraicon" onclick="openWebcam()" style="
+  font-size: 1.7rem;
+color: #000;
+padding: 6px 9px;
+border-radius: 5px;
+margin-top: 4px;
+margin-bottom: 19px;
+background: #fff;
+cursor: pointer;
+      ">photo_camera</span>
+ `;
+          CammeraapperarField.classList.add("chat", "incoming");
+          ChatBox.appendChild(CammeraapperarField);
         }
         // Disable the file input after uploading
         fileInput.disabled = true;
@@ -285,11 +325,13 @@ const handleFileUpload = (fileInput) => {
   }
 };
 
-// Function to open the webcam
-// let isWebcamPaused = false;
+
+// if (cameraIcon) {
+//   cameraIcon.addEventListener("click", openWebcam);
+// }
+
 let isWebcamPaused = false;
-// let capturedImage = null;
-// let cropper = null;
+
 
 // Function to open the webcam
 const videoElement = document.createElement("video");
@@ -298,7 +340,13 @@ videoElement.setAttribute("playsinline", "true");
 
 const openWebcam = () => {
   if (window.innerWidth <= 768) {
-    alert("Opening webcam on mobile...");
+    // alert("Opening webcam on mobile...");
+    const inputElement = document.createElement("input");
+    inputElement.type = "file";
+    inputElement.accept = "image/*";
+    inputElement.capture = "user"; // Opens the front-facing camera (selfie camera)
+    inputElement.addEventListener("change", handleImageCapture);
+    inputElement.click();
   } else {
     navigator.mediaDevices
       .getUserMedia({ video: true })
@@ -309,236 +357,271 @@ const openWebcam = () => {
       .catch((error) => {
         console.error("Error accessing webcam:", error);
       });
-  }
-  // Access the user's webcam
+      const captureButton = document.createElement("button");
+      captureButton.innerText = "Click";
+      captureButton.classList.add("captureStyle");
+      captureButton.classList.add("capture-button");
 
-  const captureButton = document.createElement("button");
-  captureButton.innerText = "Click";
-  captureButton.classList.add("captureStyle");
-  captureButton.classList.add("capture-button");
+      const closeButton = document.createElement("button");
+      closeButton.innerText = "❌";
+      captureButton.classList.add("captureStyle");
+      closeButton.classList.add("capture-button");
 
-  const closeButton = document.createElement("button");
-  closeButton.innerText = "❌";
-  captureButton.classList.add("captureStyle");
-  closeButton.classList.add("capture-button");
-
-  closeButton.addEventListener("click", () => {
-    closeWebcam();
-  });
-
-  // Create "Confirm" and "Retake" buttons dynamically
-  const confirmButton = document.createElement("button");
-  confirmButton.innerText = "Confirm";
-  confirmButton.classList.add("capture-button");
-  confirmButton.classList.add("captureStyle");
-  confirmButton.style.display = "none"; // Initially hide the Confirm button
-
-  const retakeButton = document.createElement("button");
-  retakeButton.innerText = "Retake";
-  retakeButton.classList.add("capture-button");
-  retakeButton.classList.add("captureStyle");
-  retakeButton.style.display = "none"; // Initially hide the Retake button
-
-  // Add the buttons to the webcam container
-  const webcamContainer = document.querySelector(".webcam-container");
-  webcamContainer.appendChild(videoElement); // Add the video element to the container
-  webcamContainer.appendChild(captureButton);
-  webcamContainer.appendChild(closeButton);
-  webcamContainer.appendChild(confirmButton);
-  webcamContainer.appendChild(retakeButton);
-
-  // Event listener for the Confirm button
-  confirmButton.addEventListener("click", () => {
-    if (capturedImage) {
-      if (cropper) {
-        // Get the cropped image data URL
-        const croppedImageDataURL = cropper
-          .getCroppedCanvas()
-          .toDataURL("image/png");
-        // Store the image data URL in the outgoingMessages array
-        outgoingMessages.push({
-          type: "Image",
-          data: croppedImageDataURL, // Store the image URL
-        });
-
-        //   console.log(outgoingMessages);
-
-        // Send the cropped image to the chat as an outgoing message
-        ChatBox.appendChild(CreateCharLi("Captured Image ✅", "outgoing"));
-        const imageElement = document.createElement("img");
-        imageElement.src = croppedImageDataURL;
-        ChatBox.appendChild(imageElement);
-
-        // Close the webcam
+      closeButton.addEventListener("click", () => {
         closeWebcam();
-
-        // Reset the buttons and captured image
-        capturedImage = null;
-        hideCaptureButtons(); // Hide Confirm and Retake buttons
-
-        // Simulate displaying the next question
-        setTimeout(() => {
-          if (currentQuestionIndex < customQuestions.length) {
-            const nextQuestion = customQuestions[currentQuestionIndex];
-            const gesture = gestures[currentQuestionIndex];
-            ChatBox.appendChild(
-              CreateCharLi(nextQuestion, "incoming", gesture)
-            );
-            currentQuestionIndex++;
-
-            ChatBox.scrollTop = ChatBox.scrollHeight;
-          }
-        }, 600);
-      }
-    }
-  });
-
-  // Event listener for the Retake button
-  retakeButton.addEventListener("click", () => {
-    // Remove the previously captured image and its associated elements
-    //     const capturedImageElement = document.querySelector(".captured-image");
-    //   if (capturedImageElement) {
-    //     capturedImageElement.parentNode.removeChild(capturedImageElement);
-    //   }
-    const webcamContainer = document.querySelector(".webcam-container");
-    const capturedImageElement = webcamContainer.querySelector("img");
-    if (capturedImageElement) {
-      capturedImageElement.remove();
-    }
-
-    // Remove the captured image data and Cropper instance
-    capturedImage = null;
-    if (cropper) {
-      cropper.destroy();
-      cropper = null;
-    }
-
-    // Hide Confirm and Retake buttons, show the Capture button and webcam
-    hideCaptureButtons();
-    captureButton.style.display = "inline-block";
-    videoElement.style.display = "block";
-
-    // Resume the webcam
-    if (isWebcamPaused) {
-      resumeWebcam();
-      isWebcamPaused = false;
-    }
-  });
-
-  // Event listener for the Capture button
-  captureButton.addEventListener("click", () => {
-    captureButton.style.display = "none";
-    closeButton.style.display = "none";
-    if (!isWebcamPaused) {
-      pauseWebcam(); // Pause the webcam before capturing
-      isWebcamPaused = true;
-    }
-
-    // Add a delay to allow the frame to render
-    captureImage(videoElement);
-    // setTimeout(() => {
-    // }); // You can adjust the delay time as needed
-  });
-
-  // Function to capture an image from the webcam
-  const captureImage = (videoElement) => {
-    // Create a canvas to capture the frame
-    if (webcamStream) {
-      const canvas = document.createElement("canvas");
-      canvas.width = videoElement.videoWidth;
-      canvas.height = videoElement.videoHeight;
-      const context = canvas.getContext("2d");
-      context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-
-      // Convert the captured frame to a data URL (base64)
-      capturedImage = canvas.toDataURL("image/png");
-
-      // Hide the video element immediately
-      videoElement.style.display = "none";
-
-      // Initialize the Cropper.js instance for image cropping
-      const imageElement = document.createElement("img");
-      imageElement.src = capturedImage;
-
-      // Insert the image element before the video element
-      videoElement.parentNode.insertBefore(imageElement, videoElement);
-
-      // Initialize Cropper.js for image cropping
-      cropper = new Cropper(imageElement, {
-        aspectRatio: 1, // You can set the aspect ratio as needed
-        crop: () => {
-          // Handle cropping changes here if needed
-        },
       });
 
-      showCaptureButtons(); // Show Confirm and Retake buttons
-    }
-  };
+      // Create "Confirm" and "Retake" buttons dynamically
+      const confirmButton = document.createElement("button");
+      confirmButton.innerText = "Confirm";
+      confirmButton.classList.add("capture-button");
+      confirmButton.classList.add("captureStyle");
+      confirmButton.style.display = "none"; // Initially hide the Confirm button
 
-  const pauseWebcam = () => {
-    if (webcamStream) {
-      const tracks = webcamStream.getVideoTracks();
-      if (tracks.length > 0) {
-        // Pause the video track
-        tracks[0].enabled = false;
-        // videoElement.srcObject = null;
-      }
-    }
-  };
+      const retakeButton = document.createElement("button");
+      retakeButton.innerText = "Retake";
+      retakeButton.classList.add("capture-button");
+      retakeButton.classList.add("captureStyle");
+      retakeButton.style.display = "none"; // Initially hide the Retake button
 
-  const resumeWebcam = () => {
-    if (webcamStream) {
-      const tracks = webcamStream.getVideoTracks();
-      if (tracks.length > 0) {
-        // Resume the video track
-        tracks[0].enabled = true;
-        videoElement.srcObject = webcamStream;
-      }
-    }
-  };
+      // Add the buttons to the webcam container
+      const webcamContainer = document.querySelector(".webcam-container");
+      webcamContainer.appendChild(videoElement); // Add the video element to the container
+      webcamContainer.appendChild(captureButton);
+      webcamContainer.appendChild(closeButton);
+      webcamContainer.appendChild(confirmButton);
+      webcamContainer.appendChild(retakeButton);
+// Access the user's webcam
 
-  // Function to close the webcam
-  const closeWebcam = () => {
-    if (webcamStream) {
-      webcamStream.getTracks().forEach((track) => track.stop());
-    }
-    videoElement.style.position = "static";
-    videoElement.style.left = "auto";
-    videoElement.style.top = "auto";
-
-    // Remove Cropper.js instance
+// Event listener for the Confirm button
+confirmButton.addEventListener("click", () => {
+  if (capturedImage) {
     if (cropper) {
-      cropper.destroy();
-      cropper = null;
+      // Get the cropped image data URL
+      const croppedImageDataURL = cropper
+        .getCroppedCanvas()
+        .toDataURL("image/png");
+      // Store the image data URL in the outgoingMessages array
+      outgoingMessages.push({
+        type: "Image",
+        data: croppedImageDataURL, // Store the image URL
+      });
+
+
+
+      // Send the cropped image to the chat as an outgoing message
+      ChatBox.appendChild(CreateCharLi("Captured Image ✅", "outgoing"));
+      const imageElement = document.createElement("img");
+      imageElement.src = croppedImageDataURL;
+      ChatBox.appendChild(imageElement);
+
+      // Close the webcam
+      closeWebcam();
+
+      // Reset the buttons and captured image
+      capturedImage = null;
+      hideCaptureButtons(); // Hide Confirm and Retake buttons
+
+      // Simulate displaying the next question
+      setTimeout(() => {
+        if (currentQuestionIndex < customQuestions.length) {
+          const nextQuestion = customQuestions[currentQuestionIndex];
+          const gesture = gestures[currentQuestionIndex];
+          ChatBox.appendChild(
+            CreateCharLi(nextQuestion, "incoming", gesture)
+          );
+          currentQuestionIndex++;
+
+          ChatBox.scrollTop = ChatBox.scrollHeight;
+        }
+      }, 600);
     }
+  }
+});
 
-    const webcamContainer = document.querySelector(".webcam-container");
-    if (webcamContainer) {
-      document.body.removeChild(webcamContainer);
+// Event listener for the Retake button
+retakeButton.addEventListener("click", () => {
+  // Remove the previously captured image and its associated elements
+  //     const capturedImageElement = document.querySelector(".captured-image");
+  //   if (capturedImageElement) {
+  //     capturedImageElement.parentNode.removeChild(capturedImageElement);
+  //   }
+  const webcamContainer = document.querySelector(".webcam-container");
+  const capturedImageElement = webcamContainer.querySelector("img");
+  if (capturedImageElement) {
+    capturedImageElement.remove();
+  }
+
+  // Remove the captured image data and Cropper instance
+  capturedImage = null;
+  if (cropper) {
+    cropper.destroy();
+    cropper = null;
+  }
+
+  // Hide Confirm and Retake buttons, show the Capture button and webcam
+  hideCaptureButtons();
+  captureButton.style.display = "inline-block";
+  videoElement.style.display = "block";
+
+  // Resume the webcam
+  if (isWebcamPaused) {
+    resumeWebcam();
+    isWebcamPaused = false;
+  }
+});
+
+// Event listener for the Capture button
+captureButton.addEventListener("click", () => {
+  captureButton.style.display = "none";
+  closeButton.style.display = "none";
+  if (!isWebcamPaused) {
+    pauseWebcam(); // Pause the webcam before capturing
+    isWebcamPaused = true;
+  }
+
+  // Add a delay to allow the frame to render
+  captureImage(videoElement);
+  // setTimeout(() => {
+  // }); // You can adjust the delay time as needed
+});
+
+// Function to capture an image from the webcam
+const captureImage = (videoElement) => {
+  // Create a canvas to capture the frame
+  if (webcamStream) {
+    const canvas = document.createElement("canvas");
+    canvas.width = videoElement.videoWidth;
+    canvas.height = videoElement.videoHeight;
+    const context = canvas.getContext("2d");
+    context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+    // Convert the captured frame to a data URL (base64)
+    capturedImage = canvas.toDataURL("image/png");
+
+    // Hide the video element immediately
+    videoElement.style.display = "none";
+
+    // Initialize the Cropper.js instance for image cropping
+    const imageElement = document.createElement("img");
+    imageElement.src = capturedImage;
+
+    // Insert the image element before the video element
+    videoElement.parentNode.insertBefore(imageElement, videoElement);
+
+    // Initialize Cropper.js for image cropping
+    cropper = new Cropper(imageElement, {
+      aspectRatio: 1, // You can set the aspect ratio as needed
+      crop: () => {
+        // Handle cropping changes here if needed
+      },
+    });
+
+    showCaptureButtons(); // Show Confirm and Retake buttons
+  }
+};
+
+const pauseWebcam = () => {
+  if (webcamStream) {
+    const tracks = webcamStream.getVideoTracks();
+    if (tracks.length > 0) {
+      // Pause the video track
+      tracks[0].enabled = false;
+      // videoElement.srcObject = null;
     }
-  };
+  }
+};
 
-  // Function to show the Confirm and Retake buttons
-  const showCaptureButtons = () => {
-    confirmButton.style.display = "inline-block";
-    retakeButton.style.display = "inline-block";
-  };
+const resumeWebcam = () => {
+  if (webcamStream) {
+    const tracks = webcamStream.getVideoTracks();
+    if (tracks.length > 0) {
+      // Resume the video track
+      tracks[0].enabled = true;
+      videoElement.srcObject = webcamStream;
+    }
+  }
+};
 
-  // Function to hide the Confirm and Retake buttons
-  const hideCaptureButtons = () => {
-    confirmButton.style.display = "none";
-    retakeButton.style.display = "none";
-  };
+// Function to close the webcam
+const closeWebcam = () => {
+  if (webcamStream) {
+    webcamStream.getTracks().forEach((track) => track.stop());
+  }
+  videoElement.style.position = "static";
+  videoElement.style.left = "auto";
+  videoElement.style.top = "auto";
+
+  // Remove Cropper.js instance
+  if (cropper) {
+    cropper.destroy();
+    cropper = null;
+  }
+
+  const webcamContainer = document.querySelector(".webcam-container");
+  if (webcamContainer) {
+    document.body.removeChild(webcamContainer);
+  }
+};
+
+// Function to show the Confirm and Retake buttons
+const showCaptureButtons = () => {
+  confirmButton.style.display = "inline-block";
+  retakeButton.style.display = "inline-block";
+};
+
+// Function to hide the Confirm and Retake buttons
+const hideCaptureButtons = () => {
+  confirmButton.style.display = "none";
+  retakeButton.style.display = "none";
+};
+  }
+  
 };
 
 // Add event listener to the camera icon to open the webcam
-if (cameraIcon) {
-  cameraIcon.addEventListener("click", openWebcam);
+
+
+
+
+const handleImageCapture = (event) => {
+const file = event.target.files[0];
+if (file) {
+// Display the captured image (you can modify this part)
+const capturedImageElement = document.createElement("img");
+capturedImageElement.src = URL.createObjectURL(file);
+
+// Ensure the captured image is displayed at an appropriate size
+capturedImageElement.style.maxWidth = "100%"; // Adjust the maximum width as needed
+capturedImageElement.style.height = "auto";
+
+// Append the captured image to the chat box
+ChatBox.appendChild(CreateCharLi("Captured Image ✅", "outgoing"));
+ChatBox.appendChild(capturedImageElement);
+
+
+// Store the captured image data URL in the outgoingMessages array
+outgoingMessages.push({
+  type: "Image",
+  data: capturedImageElement.src, // Store the image data URL
+});
+
+
+if (currentQuestionIndex < customQuestions.length) {
+  const nextQuestion = customQuestions[currentQuestionIndex];
+  const gesture = gestures[currentQuestionIndex];
+  ChatBox.appendChild(CreateCharLi(nextQuestion, "incoming", gesture));
+  currentQuestionIndex++;
+
+  ChatBox.scrollTop = ChatBox.scrollHeight;
 }
+}
+};
+
 
 ChatInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    if (currentQuestionIndex === 9) {
+    if (currentQuestionIndex === 11) {
       if (flag === 1) {
         // Use triple equals for comparison
         event.preventDefault();
@@ -555,7 +638,7 @@ ChatInput.addEventListener("keydown", (event) => {
 });
 
 sendChatBtn.addEventListener("click", () => {
-  if (currentQuestionIndex === 9) {
+  if (currentQuestionIndex === 11) {
     if (flag === 1) {
       displayNextQuestion(noQuestions);
     } else {

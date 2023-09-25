@@ -14,7 +14,7 @@ body {
 .chatbot {
   /* position: fixed; */
   /* right: 130px;
-        bottom: 60px; */
+    bottom: 60px; */
   /* height: 80vh; */
   /* width: 80vw; */
   width: 100%;
@@ -135,9 +135,9 @@ body {
 }
 
 /* 
-    .chat-input textarea:valid~span {
-        visibility: visible;
-    } */
+.chat-input textarea:valid~span {
+    visibility: visible;
+} */
 
 /* ... Your existing CSS rules ... */
 
@@ -206,9 +206,9 @@ body {
   top: -9999px;
 }
 
-.cameraicon {
+/* .cameraicon {
   display: none;
-}
+} */
 
 @media screen and (max-width: 768px) {
 
