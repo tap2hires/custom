@@ -1,3 +1,8 @@
+// document.addEventListener("DOMContentLoaded", function() {
+  // Your JavaScript code here
+
+
+
 const outgoingMessages = [];
 const ChatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".onlysendbutton");
@@ -357,6 +362,7 @@ const openWebcam = () => {
       .catch((error) => {
         console.error("Error accessing webcam:", error);
       });
+      
       const captureButton = document.createElement("button");
       captureButton.innerText = "Click";
       captureButton.classList.add("captureStyle");
@@ -386,6 +392,7 @@ const openWebcam = () => {
 
       // Add the buttons to the webcam container
       const webcamContainer = document.querySelector(".webcam-container");
+      webcamContainer.style.display = "block";
       webcamContainer.appendChild(videoElement); // Add the video element to the container
       webcamContainer.appendChild(captureButton);
       webcamContainer.appendChild(closeButton);
@@ -560,7 +567,13 @@ const closeWebcam = () => {
 
   const webcamContainer = document.querySelector(".webcam-container");
   if (webcamContainer) {
-    document.body.removeChild(webcamContainer);
+    // document.body.removeChild(webcamContainer);
+    webcamContainer.style.display = "none";
+    webcamContainer.removeChild(captureButton);
+    webcamContainer.removeChild(closeButton);
+    webcamContainer.removeChild(confirmButton);
+    webcamContainer.removeChild(retakeButton);
+
   }
 };
 
@@ -654,3 +667,4 @@ if (customQuestions.length > 0) {
   ChatBox.appendChild(CreateCharLi(initialQuestion, "incoming"));
   currentQuestionIndex++;
 }
+// });
