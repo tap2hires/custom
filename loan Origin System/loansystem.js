@@ -1,8 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function() {
-  // Your JavaScript code here
-
-
-
 const outgoingMessages = [];
 const ChatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".onlysendbutton");
@@ -28,7 +23,7 @@ const customQuestions = [
   "Thanks for providing please Share your Aadhar Number",
   "Thank you for the information. Now Upload Your PanCard",
   "Got it. please Upload Your Current Image click the below camera icon to take Picture",
-  "Thank you for The Image ✅.Now Enter your permanent Address",
+  "Now Enter Your Permanent Address",
   "Enter your Father's Name",
   "Enter your Mother's Name",
 ];
@@ -51,8 +46,8 @@ const yesQuestions = [
 
 const noQuestions = [
   "What Kind Of loan You Want",
-  "Would you like to rent a your house instead?",
-  "Would you like to rent a property instead?",
+  "okay so How much properties you have",
+  "Have you ever taken a loan before?",
 
   // Add more "No" questions here
 ];
@@ -115,15 +110,25 @@ const handleChat = () => {
       // Add the chatbot's incoming message with the next question and gesture
       const nextQuestion = customQuestions[currentQuestionIndex];
       const gesture = gestures[currentQuestionIndex];
-      ChatBox.appendChild(CreateCharLi(nextQuestion, "incoming", gesture));
+      // ChatBox.appendChild(CreateCharLi(nextQuestion, "incoming", gesture));
+     
       if (currentQuestionIndex === 3) { // Check if it's the Aadhar card question
         if (!aadharNumberPattern.test(userMessage)) {
           // User input does not match the Aadhar card format
-          alert("Please enter a valid Aadhar card number with 12 digits.");
-          location.reload();
+          ChatBox.appendChild(CreateCharLi("Please Enter a Valid Aadhar Card Number !!!", "incoming"));
+          ChatBox.scrollTop = ChatBox.scrollHeight;
           return; // Prevent further processing
         }
+
+        outgoingMessages.push({
+      type: "Aadhar Card",
+      message: userMessage,
+    });
+        // currentQuestionIndex++;
       }
+
+
+      ChatBox.appendChild(CreateCharLi(nextQuestion, "incoming", gesture));
 
       if (currentQuestionIndex === 3) {
         // Display the attachment field as an incoming message
@@ -198,9 +203,10 @@ const handleChat = () => {
         yesNoButtons.appendChild(noButton);
         ChatBox.appendChild(yesNoButtons);
       }
+      
       ChatBox.scrollTop = ChatBox.scrollHeight;
-      currentQuestionIndex++;
     }
+    currentQuestionIndex++;
     // else{
     // }
   }, 600);
@@ -421,6 +427,7 @@ confirmButton.addEventListener("click", () => {
       const imageElement = document.createElement("img");
       imageElement.src = croppedImageDataURL;
       ChatBox.appendChild(imageElement);
+      ChatBox.appendChild(CreateCharLi("Thankyou For The Image ✅", "incoming"));
 
       // Close the webcam
       closeWebcam();
@@ -611,6 +618,7 @@ capturedImageElement.style.height = "auto";
 // Append the captured image to the chat box
 ChatBox.appendChild(CreateCharLi("Captured Image ✅", "outgoing"));
 ChatBox.appendChild(capturedImageElement);
+ChatBox.appendChild(CreateCharLi("Thankyou For The Image ✅", "incoming"));
 
 
 // Store the captured image data URL in the outgoingMessages array
@@ -667,4 +675,3 @@ if (customQuestions.length > 0) {
   ChatBox.appendChild(CreateCharLi(initialQuestion, "incoming"));
   currentQuestionIndex++;
 }
-// });
