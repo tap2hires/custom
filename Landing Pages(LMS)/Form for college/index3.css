@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: lato;
+}
+nav{
+    background: var(--white-color, #FFF);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+height: 60px;
+}
+.edureifylogo{
+    width: 150px;
+    margin-left: 52px;
+    margin-right: 75px;
+}
+.error{
+    color: rgb(182, 0, 0);
+    font-family: lato;
+}
+.navbarcontent{
+    color: #000 !important;
+    font-family: Lato;
+    font-size: 15px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 22px;
+    margin-left: 25px;
+}
+.loginbuttons{
+    color: rgb(0, 0, 0) !important;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 90px;
+height: 40px;
+flex-shrink: 0;
+    border-radius: 40px;
+background: var(--primary-color, white);
+border: 1px solid white;
+margin-right: 12px;
+
+}
+.registerbuttons{
+    color: white !important;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 114px;
+height: 42px;
+flex-shrink: 0;
+    border-radius: 40px;
+background: var(--primary-color, #0F4987);
+border: 1px solid #0F4987;
+margin-right: 12px;
+}
+.indivisualHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+height: auto;
+flex-shrink: 0;
+background: linear-gradient(90deg, #127B93 0%, #6E5195 43.23%, #9B363C 97.92%);
+}
+.indiviualmainheading h2{
+    color: #FFF;
+font-family: Lato;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.indiviualsubheading{
+    color: #FFF4F4;
+font-family: Outfit;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.headercontent{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7em;
+}
+.headerimg{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.applyforindividualsection{
+    display: flex;
+    justify-content: center;
+    padding-top: 4em;
+    padding-bottom: 4em;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #F3F6F9 0%, rgba(243, 246, 249, 0.00) 100%);
+}
+.individualformsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    padding-left: 7em !important;
+    padding-right: 7em !important;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 3em;
+    box-shadow: 0px 0px 20px 5px rgba(180, 180, 180, 0.10);
+}
+.individualformheading p{
+    color: #000;
+font-family: Lato;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.individualformsubheading{
+    color: #9C9C9C;
+text-align: center;
+font-family: Outfit;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom: 2.3em;
+}
+.forminputsection{
+    color: #000;
+font-family: Lato;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.requestbutton{
+    border-radius: 50px !important;
+background: #0F4987 !important;
+}
+.requestbuttonofdiv{
+    display: flex;
+    justify-content: center;
+}
+.forminputbarsection{
+    border-radius: 4px;
+border: 1px solid #E4D7F1;
+padding: 0.6rem 0.75rem !important;
+}
+@media (max-width:900px) {
+    .headercontent{
+        padding: 5em;
+    }
+}
+@media (max-width:970px) {
+    .headerimageofformpage{
+        width: 100%;
+    }
+}
+@media (max-width:640px) {
+    .headercontent{
+        padding: 2em;
+    }
+    .headerimageofformpage{
+        width: 100%;
+    }
+    
+   
+}
+@media(max-width:480px){
+    .indivisualHeader{
+        font-size: 25px;
+    }
+    .indiviualsubheading{
+        font-size: 12px;
+    }
+    .indiviualmainheading h2{
+        font-size: 27px;
+    }
+    .headercontent{
+        padding: 1em;
+    }
+    .individualformsection {
+        padding-left: 3em !important;
+        padding-right: 3em !important;
+    }
+}
+@media (max-width:420px) {
+    .indivisualHeader{
+        font-size: 22px;
+    }
+    .indiviualsubheading{
+        font-size: 8px;
+    }
+    .indiviualmainheading h2{
+        font-size: 23px;
+    }
+    .headercontent{
+        padding: 0.5em !important;
+    }
+    .individualformheading p{
+        font-size: 23px;
+    }
+    .individualformsubheading{
+        font-size: 11px;
+    }
+    .individualformsection {
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+    }
+}
